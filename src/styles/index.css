@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+.product-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+   margin-top:10px;
+  }
+  .scroller {
+    display: flex;
+    gap:4px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: 4pxx;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }

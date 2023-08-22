@@ -1,0 +1,243 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "a@yahoo.com",
+      "password": "123"
+    },
+    {
+      "id": 2,
+      "email": "b@gmail.com",
+      "password": "124"
+    },
+    {
+      "email": "c@gmail.com",
+      "password": "4567",
+      "": "on",
+      "id": 3
+    },
+    {
+      "email": "d@gmail.com",
+      "password": "ffff",
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Running Sportwear",
+      "images": [
+        "https://s6.uupload.ir/files/p-2_o1uh.png",
+        "https://s6.uupload.ir/files/p-2_o1uh.png"
+      ],
+      "des": "Lorem ipson dolor sit,ametconsectetur adipiscing elit,sed do eiusmod tempor incididunt ut et View more..",
+      "size": [40, 41, 42],
+      "quntity": 20,
+      "brand": "Adidas",
+      "price": "$ 85.00",
+      "color": [
+        {
+          "color1": "red"
+        },
+        {
+          "color2": "black"
+        },
+        {
+          "color3": "white"
+        },
+        {
+          "color4": "blue"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Running Sportwear",
+      "images": [
+        "https://s6.uupload.ir/files/p-4_alfy.png",
+        "https://s6.uupload.ir/files/p-4_alfy.png"
+      ],
+      "des": "Lorem ipson dolor sit,ametconsectetur adipiscing elit,sed do eiusmod tempor incididunt ut et View more..",
+      "size": [40, 41, 42],
+      "brand": "Nike",
+      "quntity": 20,
+      "price": 100000,
+      "color": [
+        {
+          "color1": "red"
+        },
+        {
+          "color2": "black"
+        },
+        {
+          "color3": "white"
+        },
+        {
+          "color4": "blue"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Running Sportwear",
+      "images": [
+        "https://s6.uupload.ir/files/p-3_1qrp.png",
+        "https://s6.uupload.ir/files/p-3_1qrp.png"
+      ],
+      "des": "Lorem ipson dolor sit,ametconsectetur adipiscing elit,sed do eiusmod tempor incididunt ut et View more..",
+      "size": [40, 41, 42],
+      "brand": "Puma",
+      "quntity": 20,
+      "price": 100000,
+      "color": [
+        {
+          "color1": "red"
+        },
+        {
+          "color2": "black"
+        },
+        {
+          "color3": "white"
+        },
+        {
+          "color4": "blue"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Running Sportwear",
+      "images": [
+        "https://s6.uupload.ir/files/p-7_itfo.png",
+        "https://s6.uupload.ir/files/p-7_itfo.png"
+      ],
+      "des": "Lorem ipson dolor sit,ametconsectetur adipiscing elit,sed do eiusmod tempor incididunt ut et View more..",
+      "size": [40, 41, 42],
+      "brand": "Puma",
+      "quntity": 20,
+      "price": 100000,
+      "color": [
+        {
+          "color1": "red"
+        },
+        {
+          "color2": "black"
+        },
+        {
+          "color3": "white"
+        },
+        {
+          "color4": "blue"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Running Sportwear",
+      "images": [
+        "https://s6.uupload.ir/files/p-8_52u8.png",
+        "https://s6.uupload.ir/files/p-8_52u8.png"
+      ],
+      "des": "Lorem ipson dolor sit,ametconsectetur adipiscing elit,sed do eiusmod tempor incididunt ut et View more..",
+      "size": [40, 41, 42],
+      "brand": "Asics",
+      "quntity": 20,
+      "price": 100000,
+      "color": [
+        {
+          "color1": "red"
+        },
+        {
+          "color2": "black"
+        },
+        {
+          "color3": "white"
+        },
+        {
+          "color4": "blue"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Running Sportwear",
+      "images": [
+        "https://s6.uupload.ir/files/p-10_aita.png",
+        "https://s6.uupload.ir/files/p-10_aita.png"
+      ],
+      "des": "Lorem ipson dolor sit,ametconsectetur adipiscing elit,sed do eiusmod tempor incididunt ut et View more..",
+      "size": [40, 41, 42],
+      "brand": "Reebok",
+      "quntity": 20,
+      "price": 100000,
+      "color": [
+        {
+          "color1": "red"
+        },
+        {
+          "color2": "black"
+        },
+        {
+          "color3": "white"
+        },
+        {
+          "color4": "blue"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Running Sportwear",
+      "images": [
+        "https://s6.uupload.ir/files/p-12_s4w.png",
+        "https://s6.uupload.ir/files/p-12_s4w.png"
+      ],
+      "des": "Lorem ipson dolor sit,ametconsectetur adipiscing elit,sed do eiusmod tempor incididunt ut et View more..",
+      "size": [40, 41, 42],
+      "brand": "Converse",
+      "quntity": 20,
+      "price": 100000,
+      "color": [
+        {
+          "color1": "red"
+        },
+        {
+          "color2": "black"
+        },
+        {
+          "color3": "white"
+        },
+        {
+          "color4": "blue"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Running Sportwear",
+      "images": [
+        "https://s6.uupload.ir/files/p-9_m1t1.png",
+        "https://s6.uupload.ir/files/p-9_m1t1.png"
+      ],
+      "des": "Lorem ipson dolor sit,ametconsectetur adipiscing elit,sed do eiusmod tempor incididunt ut et View more..",
+      "size": [40, 41, 42],
+      "brand": "Adidas",
+      "quntity": 20,
+      "price": 100000,
+      "color": [
+        {
+          "color1": "red"
+        },
+        {
+          "color2": "black"
+        },
+        {
+          "color3": "white"
+        },
+        {
+          "color4": "blue"
+        }
+      ]
+    }
+  ]
+}
