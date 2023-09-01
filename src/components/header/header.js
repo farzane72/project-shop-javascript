@@ -1,5 +1,6 @@
 import El from "../../utils/El";
 import { svgs } from "../svg/svg";
+import { Link } from "../link/link";
 export default function Header(){
     return El({
     element:'header',
@@ -64,12 +65,16 @@ export default function Header(){
                                 innerHTML:svgs.BellSvg
                             
                                 }),
-                                El({
-                                    element:'div',
-                                    className:'flex justify-between',
-                                    innerHTML:svgs.HeartSvg
-                                
-                                    })
+                                Link({
+                                    to:'/popular',
+                                    child: El({
+                                        element:'div',
+                                        className:' cursor-pointer',
+                                        innerHTML:svgs.HeartSvg
+                                    
+                                        })
+                                  }),
+                               
                         
                         ]
                     

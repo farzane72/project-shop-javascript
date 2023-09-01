@@ -11,6 +11,7 @@ import Button from "../../components/button/button";
 import { Product } from "../../components/product/product";
 import { getData } from "../../services/api/getData";
 import { Link } from "../../components/link/link";
+import { SearchHome } from "../search/searchHome";
 export default function Home() {
   let test=""
   //if exist user retuen
@@ -231,14 +232,68 @@ export default function Home() {
                 child: [
                   El({
                     element: "input",
+                    id:'searchsInputHome',
                     className: "w-full bg-gray-100 rounded-sm pl-6 py-1",
                     placeholder: "Search",
+                    type:'search',
+                    onchange(){
+                      let searchsInputHome=document.getElementById('searchsInputHome')
+                      let searchsTitle=searchsInputHome.value.trim()
+                      let titlesResult=document.getElementById('result-title')
+                      let closeIcon=document.getElementById('close-icon')
+                      
+                      searchsTitle?
+                          getData({
+                            endPoint: "products",
+                            params: `?name_like=${searchsTitle}`,
+                          }).then((data) => {
+                            
+                            titlesResult.innerHTML=''
+                            titlesResult.classList.remove('hidden')
+                            closeIcon.classList.remove('hidden')
+                            data.forEach(element => {
+                              //titlesResult.innerHTML +=`\n ${element.name}   \n  `;
+                              titlesResult.appendChild(SearchHome({
+                                id:element.id,
+                                title:element.name,
+                                
+                            })) 
+                      })
+                     
+                      })
+                      :
+                      titlesResult.classList.add('hidden')
+
+                    }
                   }),
                   El({
                     element: "span",
                     className: "absolute left-0 top-2 pl-1 ",
                     innerHTML: svgs.SearchSvg,
                   }),
+                  El({
+                    element: "span",
+                    className: "absolute left-0 top-8 right-0  bg-gray-100  flex flex-col mb-2 hidden ",
+                    id:'result-title',
+                    child:''
+                  }),
+                  El({
+                    element: "span",
+                    className: "absolute  top-8 right-4 hidden  ",
+                    id:'close-icon',
+                    innerHTML:svgs.CloseSvg,
+                    onclick(){
+                      let closeIcon=document.getElementById('close-icon')
+                      let searchsInputHome=document.getElementById('searchsInputHome')
+                      //let searchsTitle=searchsInputHome.value.trim()
+                      let titlesResult=document.getElementById('result-title')
+                      titlesResult.classList.add('hidden')
+                      closeIcon.classList.add('hidden')
+                      searchsInputHome.value=''
+
+                    }
+                  }),
+                  
                 ],
               }),
               // El({
@@ -297,14 +352,17 @@ export default function Home() {
                     element: "div",
                     className: "flex justify-between mt-2",
                     child:[
-                      El({
-                        element: "p",
-                        className: "font-bold text-xl",
-                        child:'Most Popular' 
+                      Link({
+                        to:'/popular',
+                        child: El({
+                          element: "p",
+                          className: "font-bold text-xl cursor-pointer",
+                          child:'Most Popular' 
+                        })
                       }),
                       El({
                         element: "p",
-                        className: "",
+                        className: "cursor-pointer",
                         child:'See All'
                       }),
                     ]
@@ -318,7 +376,7 @@ export default function Home() {
                       child:[
                         Button({
                             element:'button',
-                            className:'bg-slate-900 text-white ',
+                            className:' focus:bg-slate-900 focus:text-white',
                             variant:'outlined',
                             id:'',
                             child:'All',
@@ -331,56 +389,56 @@ export default function Home() {
                             }),
                             Button({
                               element:'button',
-                              className:'',
+                              className:'focus:bg-slate-900 focus:text-white',
                               variant:'outlined',
                               id:'',
                               child:'Nike',
                               onclick(e){
                                 renderData({
                                   endPoint:'products',
-                                  params:`brand=nike`
+                                  params:`?brand=nike`
                                  })
                                 
                               }
                               }),
                               Button({
                                 element:'button',
-                                className:'',
+                                className:'focus:bg-slate-900 focus:text-white',
                                 variant:'outlined',
                                 id:'',
                                 child:'Adidas',
                                 onclick(e){
                                   renderData({
                                     endPoint:'products',
-                                    params:`brand=adidas`
+                                    params:`?brand=adidas`
                                    })
                                   
                                 }
                                 }),
                                 Button({
                                   element:'button',
-                                  className:'',
+                                  className:'focus:bg-slate-900 focus:text-white',
                                   variant:'outlined',
                                   id:'',
                                   child:'Puma',
                                   onclick(e){
                                     renderData({
                                       endPoint:'products',
-                                      params:`brand=puma`
+                                      params:`?brand=puma`
                                      })
                                     
                                   }
                                   }),
                                   Button({
                                     element:'button',
-                                    className:'',
+                                    className:'focus:bg-slate-900 focus:text-white',
                                     variant:'outlined',
                                     id:'',
                                     child:'Asics',
                                     onclick(e){
                                       renderData({
                                          endPoint:'products',
-                                         params:`brand=asics`
+                                         params:`?brand=asics`
                                         })
                                       
                                     //   setTimeout(() => {
@@ -402,46 +460,46 @@ export default function Home() {
                                     }),
                                     Button({
                                       element:'button',
-                                      className:'',
+                                      className:'focus:bg-slate-900 focus:text-white',
                                       variant:'outlined',
                                       id:'',
                                       child:'Reebok',
                                       onclick(){
                                         renderData({
                                           endPoint:'products',
-                                          params:`brand=reebok`
+                                          params:`?brand=reebok`
                                          })
                                       }
                                       }),
                                       Button({
                                         element:'button',
-                                        className:'',
+                                        className:'focus:bg-slate-900 focus:text-white',
                                         variant:'outlined',
                                         id:'',
                                         child:'New Ba',
                                         onclick(){
                                           renderData({
                                             endPoint:'products',
-                                            params:`brand=newba`
+                                            params:`?brand=newba`
                                            })
                                         }
                                         }),
                                         Button({
                                           element:'button',
-                                          className:'',
+                                          className:'focus:bg-slate-900 focus:text-white',
                                           variant:'outlined',
                                           id:'',
                                           child:'Converse',
                                           onclick(){
                                             renderData({
                                               endPoint:'products',
-                                              params:`brand=converse`
+                                              params:`?brand=converse`
                                              })
                                           }
                                           }),
                                           Button({
                                             element:'button',
-                                            className:'',
+                                            className:'focus:bg-slate-900 focus:text-white',
                                             variant:'outlined',
                                             id:'',
                                             child:'More',
@@ -532,6 +590,7 @@ function renderData({endPoint, params}){
      secProducts.innerHTML=''
      data.forEach(element => {
        secProducts.appendChild(Product({
+         id:element.id,
          src:`${element.images[0]}`,
          title:element.name,
          price:element.price

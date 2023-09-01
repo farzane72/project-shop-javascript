@@ -28,7 +28,7 @@ export const Products=(data)=>{
                     }),
                     El({
                         element:'span',
-                        className:'font-bold text-xl',
+                        className:'font-bold text-xl  capitalize',
                        // child:'hello brand' [ ج ذاذ]
                         child:data[0].brand
                             
@@ -39,37 +39,16 @@ export const Products=(data)=>{
             }),
             El({
                 element:'div',
-                id:'pro-brand',
-                className:'grid grid-cols-2 mt-4 p-2',
-                child:El({
-                    element:'div',
-                    className:'',
-                    id:'',
-                    
-                   child:renderData(data)
-                    // Product({
-                    //          src:`${data[0].images[0]}`,
-                    //          title:data[0].name,
-                    //          price:data[0].price
-                    //        })
-                    //       })
+                className:'grid grid-cols-2 my-4 p-2',
+                id:'',
+                child:data.map((element)=>{
+                return  Product({
+                            src:`${element.images[0]}`,
+                            title:element.name,
+                            price:element.price
+                        })
 
-
-
-                   // data.forEach(element => {
-                       // console.log(element);
-                            // Product({
-                            //      src:`${element.images[0]}`,
-                            //      title:element.name,
-                            //      price:element.price
-                            //    })
-                             //  })
-                    
-
-                       // renderData(data)
-                      
-                    
-                })
+                }) 
             })
         ]
     })

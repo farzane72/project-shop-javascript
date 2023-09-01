@@ -1,5 +1,6 @@
 import El from "../../utils/El";
 import { svgs } from "../../components/svg/svg";
+import { Link } from "../../components/link/link";
 
 export default function Master(child) {
   return El({
@@ -13,12 +14,53 @@ export default function Master(child) {
       }),
       El({
         element: "footer",
-        className: "fix",
-        child: El({
+        className: "fixed bottom-0 left-0 right-0   bg-white p-2",
+        child:
+         El({
           element: "div",
           className: "flex justify-between",
           child: [
-            El({
+            Link({ to:"/",
+              child: El({
+                element: "div",
+                className: "flex flex-col justify-center items-center",
+                child: [
+                  El({
+                    element: "span",
+                    className: "",
+                    innerHTML: svgs.HomeSvg,
+                  }),
+                  El({
+                    element: "span",
+                    className: "text-sm",
+                    child:'Home'
+                  }),
+                ],
+              }),
+            }),
+           
+
+            Link({to:'/mycart',
+            child:El({
+              element: "div",
+              className: "flex flex-col justify-center items-center",
+              child: [
+                El({
+                  element: "span",
+                  className: "",
+                  innerHTML: svgs.CartSvg,
+                }),
+                El({
+                  element: "span",
+                  className: "text-sm",
+                  child:'Cart'
+                }),
+              ],
+            }),
+              
+            }),
+            Link({to:'/orders',
+            child:  El({
               element: "div",
               className: "flex flex-col justify-center items-center",
               child: [
@@ -26,53 +68,17 @@ export default function Master(child) {
                   element: "span",
                   className: "",
                   onclick() {},
-                  innerHTML: svgs.HomeSvg,
+                  innerHTML: svgs.OrdersSvg,
                 }),
                 El({
                   element: "span",
                   className: "text-sm",
-                  child:'Home'
+                  child:'Orders'
                 }),
               ],
             }),
-
-
-            El({
-                element: "div",
-                className: "flex flex-col justify-center items-center",
-                child: [
-                  El({
-                    element: "span",
-                    className: "",
-                    onclick() {},
-                    innerHTML: svgs.CartSvg,
-                  }),
-                  El({
-                    element: "span",
-                    className: "text-sm",
-                    child:'Cart'
-                  }),
-                ],
-              }),
-
-
-              El({
-                element: "div",
-                className: "flex flex-col justify-center items-center",
-                child: [
-                  El({
-                    element: "span",
-                    className: "",
-                    onclick() {},
-                    innerHTML: svgs.OrdersSvg,
-                  }),
-                  El({
-                    element: "span",
-                    className: "text-sm",
-                    child:'Orders'
-                  }),
-                ],
-              }),
+            }),
+            
               El({
                 element: "div",
                 className: "flex flex-col justify-center items-center",

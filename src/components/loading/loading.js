@@ -32,7 +32,7 @@ export default function Loading() {
                 child: El({
                   element: "span",
                   className: "flex items-center justify-center ",
-                  innerHTML: svgs.IconSvg,
+                  innerHTML: svgs.LogoSvg1,
                 }),
               }),
             ],
