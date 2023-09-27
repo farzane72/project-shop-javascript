@@ -73,16 +73,6 @@ export const Checkout=(dataMycart)=>{
                     
                 ]
             }),
-            // El({
-            //     element:'div',
-            //     id:'selected-address',
-            //     child:Address({
-            //         type:'selectedAddress',
-            //         locationsName: dataUser[0].address[0].loName,
-            //         location: dataUser[0].address[0].location
-            //     })
-            // })
-            //,
             
             El({
                 element:'div',
@@ -90,7 +80,7 @@ export const Checkout=(dataMycart)=>{
                 child:[
                     El({
                         element:'p',
-                        className:'font-bold py-2  ',
+                        className:'font-bold py-2 text-lg  ',
                         child:"Order List"
                     }),
                     El({
@@ -100,9 +90,11 @@ export const Checkout=(dataMycart)=>{
                             return Cart({
                                 type:'checkout',
                                 namePro:t.name,
-                                src:t.images[0],
-                                color:t.color[0],
-                                size:t.size[0],
+                                src:t.image,
+                                color:t.selectedColor,
+                                size:t.selectedSize,
+                                // color:t.color[0],
+                                // size:t.size[0],
                                 qty:t.countPro,
                                 price:t.price,
                                 id:t.id 
@@ -119,7 +111,7 @@ export const Checkout=(dataMycart)=>{
                 child:[
                     El({
                         element:'span',
-                        className:' font-bold ',
+                        className:' font-bold text-lg ',
                         child:"Choose Shipping"
                     }),
                     El({
@@ -132,11 +124,11 @@ export const Checkout=(dataMycart)=>{
                                 child:[
                                     El({
                                         element:'i',
-                                        className:'fa fa-truck',
+                                        className:'fa fa-truck text-lg',
                                     }),
                                     El({
                                         element:'span',
-                                        className:'text-sm font-bold',
+                                        className:'text-lg font-bold',
                                         child:'Choose Shipping type'
                                     }),
 
@@ -163,7 +155,7 @@ export const Checkout=(dataMycart)=>{
                 child:[
                     El({
                         element:'p',
-                        className:'font-bold',
+                        className:'font-bold text-lg',
                         child:"Promo Code"  
                     }),
                     El({
@@ -173,7 +165,7 @@ export const Checkout=(dataMycart)=>{
                             El({
                                 element:'input',
                                 id:'promo-code',
-                                className:'bg-gray-100 rounded-xl p-2  placeholder:text-gray-400 placeholder:text-[10px] flex-1 ',
+                                className:'bg-gray-100 rounded-xl p-2  placeholder:text-gray-400 placeholder:text-[12px] flex-1 ',
                                 placeholder:"Enter Promo Code",   
                             }),
                             El({
@@ -300,11 +292,11 @@ export const Checkout=(dataMycart)=>{
                             }),
                             El({
                                 element:'div',
-                                className:'flex items-center justify-between mt-2 border-t mx-2  pt-2',
+                                className:'flex items-center justify-between mt-2 border-t mx-2 mb-4 pt-2',
                                 child:[
                                     El({
                                         element:'span',
-                                        className:'text-sm text-gray-400',
+                                        className:'text-lg font-bold text-gray-400',
                                         child:'Total'
                                     }),
                                     El({
@@ -313,13 +305,13 @@ export const Checkout=(dataMycart)=>{
                                         child:[
                                             El({
                                                 element:'span',
-                                                className:'',
+                                                className:'font-bold text-lg',
                                                 child:'$'
 
                                             }),
                                             El({
                                                 element:'span',
-                                                className:'',
+                                                className:'font-bold text-lg',
                                                 id:'total-price',
                                                 child:total+shippingPrice.price-promoPrice
                                             }),
@@ -343,7 +335,7 @@ export const Checkout=(dataMycart)=>{
                       child:[
                           El({
                               element:'span',
-                              className:'text-[12px] ',
+                              className:'text-sm ',
                               child:'Continue to Payment'
                           }),
                           El({
@@ -363,62 +355,3 @@ export const Checkout=(dataMycart)=>{
     })
 }
 
-// El({
-            //     element:'div',
-            //     className:'py-4 border-b mx-2 border-gray-100',
-            //     child:[
-            //         El({
-            //             element:'span',
-            //             className:' font-bold text-xl  ',
-            //             child:"Shipping Address"
-            //         }),
-            //         El({
-            //             element:'div',
-            //             className:'mt-3',
-            //             id:'selected-address',
-            //             child:  El({
-            //                     element:'div',
-            //                     className:'bg-white p-4 flex justify-between items-center rounded-2xl',
-            //                     child:[
-            //                         El({
-            //                             element:'div',
-            //                             className:'flex items-center gap-2',
-            //                             child:[
-            //                                 El({
-            //                                     element:'div',
-            //                                     className:'w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center',
-            //                                     child:El({
-            //                                         element:'div',
-            //                                         className:'w-8 h-8 bg-black rounded-full flex items-center justify-center',
-            //                                         innerHTML:svgs.LocationSvg
-            //                                     }),
-            //                                 }),
-            //                                 El({
-            //                                     element:'div',
-            //                                     className:'flex flex-col ',
-            //                                     child:[
-            //                                         El({
-            //                                         element:'span',
-            //                                         className:'font-bold ',
-            //                                         child:'Home'
-            //                                     }),
-            //                                     El({
-            //                                         element:'span',
-            //                                         className:'text-gray-500 text-sm',
-            //                                         child:'gaz Strret,12 Alley'
-            //                                     })
-            //                                 ]
-            //                                 })
-            //                             ]
-            //                         }),
-            //                         El({
-            //                             element:'span',
-            //                             className:'',
-            //                             innerHTML:svgs.PenSvg
-            //                         })
-            //                     ]
-            //                 })
-            //         }),
-                    
-            //     ]
-            // }),

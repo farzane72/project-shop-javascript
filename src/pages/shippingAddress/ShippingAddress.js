@@ -71,7 +71,7 @@ export const ShippingAddress = (data) => {
                 for (const radioButton of radioButtons) {
                     if (radioButton.checked) {
                         selectedAddress = radioButton.value;
-                        selectedAddress2 = radioButton.valueaddress;
+                       // selectedAddress2 = radioButton.valueaddress;
                        // console.log(radioButton.dataset.valueaddress);
                         break;
                     }

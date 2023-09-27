@@ -5,7 +5,7 @@ import { DeleteLoSRecentsSearch } from "../../services/localstorage";
 export const SearchHome=({type,title,id})=>{
     return El({
         element:'div',
-        className:'flex flex-col',
+        className:'flex flex-col pl-4 pt-2',
         child:[
                     El({
                         element:'div',

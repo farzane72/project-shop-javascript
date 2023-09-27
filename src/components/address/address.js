@@ -59,6 +59,8 @@ export const Address=({type='address',locationsName,location}) => {
                 name:'address',
                 value:locationsName,
                 id:locationsName,
+                //eslah beshe
+                
                 restAttrs: {
                     "valueaddress":`${location}`,
                     },

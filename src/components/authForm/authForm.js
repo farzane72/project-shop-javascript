@@ -8,15 +8,16 @@ import Cookies from "js-cookie";
 //import axios from 'axios';
 import { getData } from "../../services/api/getData.js";
 import { setData } from "../../services/api/setData.js";
+import { Toast } from "../toast/toast.js";
 
 const AuthForm = () => {
   return El({
     element: "div",
-    className: "relative",
+    className: "relative px-4 mx-4",
     child: [
       Form({
         id: "register",
-        className: " px-3 ",
+        className: "px-3 ",
         child: [
           TextField({
             placeholder: "Email",
@@ -40,7 +41,7 @@ const AuthForm = () => {
           }),
           El({
             element: "div",
-            className: " mt-[50%] mb-6",
+            className: " mt-[70%] mb-6",
             child: Button({
               className: "w-full ",
               child: "Sign In",
@@ -64,7 +65,8 @@ const AuthForm = () => {
                 endPoint: "users",
                 data: data,
               }).then(() => {
-                alert(" you login successfully :)");
+                //alert(" you login successfully :)");
+                Toast("کاربر گرامی با موفقیت لاگین شدید")
                 //-------------------set to cookie-----------
                 const token = "JWT_fwqyt#34#$%3453454575bjhgfjWQE";
                 Cookies.set("token", token, {
@@ -104,8 +106,8 @@ const AuthForm = () => {
               Cookies.set("token", token, {
                 expires: 1,
               });
-
-              alert(" you dont login,you be here before ");
+              Toast("کاربر گرامی با موفقیت لاگین شدید:")
+              //alert(" you dont login,you be here before ");
               let startPage = document.getElementById("startPage");
               startPage.innerHTML = "";
               startPage.appendChild(Home());

@@ -3,23 +3,18 @@ import { svgs } from "../svg/svg";
 import { EditQtyLocalStorage } from "../../services/localstorage";
 import { totalPrice } from "../../pages/myCart/cart";
 import { ModalDelete } from "../modal/modalDelete";
+import { countShoppingCart } from "../../pages/Master/master";
 
-//import { Link } from "../link/link";
 
-export const Cart = ({ type, src,namePro,color,size,qty,price,id,text1='',text2=''}) => {
+
+export const Cart = ({ type, src,namePro,color='red',size=40,qty=1,price,id,text1='',text2=''}) => {
    
-    let bgColor=''
-    if(color==='red') bgColor='bg-red-500'
-    else if(color==='blue')bgColor='bg-blue-500'
-    else if(color==='silver')bgColor='bg-gray-500'
-    else  bgColor='bg-black'
-
   return El({
     element:'div',
-    className:' mb-4 bg-white rounded-3xl p-4 ',
+    className:' mb-6 bg-white rounded-3xl p-4 ',
     child: El({
         element: "div",
-        className: "flex  gap-8  ",
+        className: "flex  gap-4  ",
         child: [
           El({
             element: "div",
@@ -40,7 +35,7 @@ export const Cart = ({ type, src,namePro,color,size,qty,price,id,text1='',text2=
                 child: [
                   El({
                     element: "span",
-                    className: "font-bold",
+                    className: "font-bold text-lg",
                     child: namePro,
                   }),
                   type === "cart"
@@ -65,12 +60,12 @@ export const Cart = ({ type, src,namePro,color,size,qty,price,id,text1='',text2=
                 child: [
                   El({
                     element: "div",
-                    className: `w-3 h-3 rounded-full ${bgColor} `,
-                    // child:
+                    className: `w-3 h-3 rounded-full bg-${color}-500 `,
+                    // child: faghat bgcolor bod taghir dadam
                   }),
                   El({
                     element: "span",
-                    className: "text-[12px]  capitalize text-slate-500",
+                    className: "text-sm  capitalize text-slate-500",
                      child:`${color}`
                   }),
                   El({
@@ -80,12 +75,12 @@ export const Cart = ({ type, src,namePro,color,size,qty,price,id,text1='',text2=
                   }),
                   El({
                     element: "span",
-                    className: "text-[12px]  capitalize text-slate-500",
+                    className: "text-sm  capitalize text-slate-500",
                     child:'Size='
                   }),
                   El({
                     element: "span",
-                    className: "text-[12px] text-slate-500",
+                    className: "text-sm text-slate-500",
                      child:`${size}`
                   }),
                   (type==='order')?
@@ -98,7 +93,7 @@ export const Cart = ({ type, src,namePro,color,size,qty,price,id,text1='',text2=
                   
                     El({
                       element: "span",
-                      className: "text-[12px]  capitalize text-slate-500",
+                      className: "text-sm  capitalize text-slate-500",
                       child:'Qty='
                     }):"",
                     
@@ -129,12 +124,12 @@ export const Cart = ({ type, src,namePro,color,size,qty,price,id,text1='',text2=
                         child:[
                             El({
                                 element: "span",
-                                className: "",
+                                className: "font-bold",
                                 child:`$`
                               }),
                               El({
                                 element: "span",
-                                className: "",
+                                className: "font-bold",
                                 id:'count-total',
                                 child: price*qty
                               }),
@@ -226,9 +221,6 @@ function clickQuantity(e,input,price,id) {
       quantityPro=target.parentElement.previousElementSibling
        total=target.parentElement.parentElement.previousElementSibling.lastElementChild
        countPro = +quantityPro.value;
-     // console.log(quantityPro);
-     // console.log(total);
-     // console.log( countPro);
       countPro++;
     } 
     else{
@@ -243,6 +235,11 @@ function clickQuantity(e,input,price,id) {
       id:id,
       qty:countPro
     })
+    //---------------update CountShopping cart----
+    let cart=document.getElementById('count-cart')
+    cart.innerHTML=``
+    cart.innerHTML=countShoppingCart()
+    
     //--------------------------------------
     quantityPro.value = "";
     quantityPro.value = countPro;

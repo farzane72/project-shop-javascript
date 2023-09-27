@@ -2,9 +2,10 @@ import El from "../../utils/El";
 import { svgs } from "../../components/svg/svg";
 import { Product } from "../../components/product/product";
 import { Link } from "../../components/link/link";
+//import Loading from "../../components/loading/loading";
 
 
-//Link({ to: `/products/${brandsName}`, child:brandsName}),
+
 
 
 export const Products=(data)=>{
@@ -13,9 +14,10 @@ export const Products=(data)=>{
         element:'div',
         className:'',
         child:[
+           // Loading(),
             El({
                 element:'div',
-                className:'flex gap-2',
+                className:'flex gap-4',
                 child:[
                     Link({ to: `/`,
                      child: El({
@@ -29,7 +31,6 @@ export const Products=(data)=>{
                     El({
                         element:'span',
                         className:'font-bold text-xl  capitalize',
-                       // child:'hello brand' [ ج ذاذ]
                         child:data[0].brand
                             
                         
@@ -39,7 +40,7 @@ export const Products=(data)=>{
             }),
             El({
                 element:'div',
-                className:'grid grid-cols-2 my-4 p-2',
+                className:'grid grid-cols-2 my-8 p-2',
                 id:'',
                 child:data.map((element)=>{
                 return  Product({

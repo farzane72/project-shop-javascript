@@ -1,8 +1,9 @@
 import El from "../../utils/El";
-import Loading from "../../components/loading/loading";
+import Loading from "../loading/loadingPage";
 import { Welcome } from "../../components/welcome/welcome";
 import { StartSlider } from "../../components/startSlider/startSlider";
-import { Login } from "../../components/login/login";
+//import { Login } from "../../components/login/login";
+import LoadingPage from "../loading/loadingPage";
 
 export const StartPage = () => {
   setTimeout(() => {
@@ -25,6 +26,6 @@ export const StartPage = () => {
     element: "div",
     className: "overflow-hidden sm:container mx-auto h-screen w-screen h-full",
     id: "startPage",
-    child:Loading(),
+    child:LoadingPage(),
   });
 };

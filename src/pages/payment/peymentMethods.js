@@ -2,9 +2,7 @@
 import { Link } from "../../components/link/link";
 import El from "../../utils/El";
 import { svgs } from "../../components/svg/svg";
-//import { Address } from "../../components/address/address";
 import Button from "../../components/button/button";
-//import { SetLocalStorage } from "../../services/localstorage";
 import { Peyment } from "../../components/payment/peyment";
 import { setData } from "../../services/api/setData";
 import { GetLocalStorage, SetLocalStorage } from "../../services/localstorage";
@@ -28,13 +26,13 @@ export const PeymentMethods=()=>{
                     to: "/checkout",
                     child: El({
                       element: "span",
-                      className: "",
+                      className: "font-bold",
                       innerHTML: svgs.ArrowLeftSvg,
                     }),
                   }),
                   El({
                     element: "span",
-                    className: "font-bold text-lg",
+                    className: "font-bold text-xl",
                     child: "Payment Methods ",
                   }),
                 ],
@@ -43,7 +41,7 @@ export const PeymentMethods=()=>{
           }),
           El({
             element: "p",
-            className: "text-sm text-gray-500",
+            className: "text-[16px] text-gray-500",
             child: "select the payment method you want to use",
           }),
           El({

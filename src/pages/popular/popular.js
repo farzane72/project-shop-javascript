@@ -49,7 +49,7 @@ export const Popular=()=>{
                         onclick(e){
                           renderData({
                             endPoint:'products',
-                            params:``
+                            params:`?popular=true`
                            })
                         }
                         }),
@@ -62,7 +62,7 @@ export const Popular=()=>{
                           onclick(e){
                             renderData({
                               endPoint:'products',
-                              params:`?brand=nike`
+                              params:`?brand=nike&popular=true`
                              })
                             
                           }
@@ -76,7 +76,7 @@ export const Popular=()=>{
                             onclick(e){
                               renderData({
                                 endPoint:'products',
-                                params:`?brand=adidas`
+                                params:`?brand=adidas&popular=true`
                                })
                               
                             }
@@ -90,7 +90,7 @@ export const Popular=()=>{
                               onclick(e){
                                 renderData({
                                   endPoint:'products',
-                                  params:`?brand=puma`
+                                  params:`?brand=puma&popular=true`
                                  })
                                 
                               }
@@ -104,7 +104,7 @@ export const Popular=()=>{
                                 onclick(e){
                                   renderData({
                                      endPoint:'products',
-                                     params:`?brand=asics`
+                                     params:`?brand=asics&popular=true`
                                     })
                                   
                                   
@@ -119,7 +119,7 @@ export const Popular=()=>{
                                   onclick(){
                                     renderData({
                                       endPoint:'products',
-                                      params:`?brand=reebok`
+                                      params:`?brand=reebok&popular=true`
                                      })
                                   }
                                   }),
@@ -132,7 +132,7 @@ export const Popular=()=>{
                                     onclick(){
                                       renderData({
                                         endPoint:'products',
-                                        params:`?brand=newba`
+                                        params:`?brand=newba&popular=true`
                                        })
                                     }
                                     }),
@@ -145,7 +145,7 @@ export const Popular=()=>{
                                       onclick(){
                                         renderData({
                                           endPoint:'products',
-                                          params:`?brand=converse`
+                                          params:`?brand=converse&popular=true`
                                          })
                                       }
                                       }),
@@ -178,7 +178,7 @@ export const Popular=()=>{
                   child:[
                     renderData({
                       endPoint:'products',
-                      params:``
+                      params:`?popular=true`
                      })
                   ]
                 }),

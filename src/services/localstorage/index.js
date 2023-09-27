@@ -5,15 +5,18 @@ import { SearchHome } from "../../pages/search/searchHome";
 let arrayCart=[]
 //let arraySearch=[{id: 1693296488898, data: 'nike'}]
 
-export const SetLocalStorage=({nameLocalStorage,data,countPro=1})=>{
+export const SetLocalStorage=({nameLocalStorage,data})=>{
+    //export const SetLocalStorage=({nameLocalStorage,data,countPro=1,selectedSize=40,selectedColor='red'})=>{
     //bayad size o color ham add she
     arrayCart = GetLocalStorage(`${nameLocalStorage}`)
-console.log(`${nameLocalStorage}`);
-let  newData={
-    countPro,
-    ...data
-}
-    arrayCart.push(newData)
+//console.log(`${nameLocalStorage}`);
+// let  newData={
+//     countPro,
+//     selectedSize,
+//     selectedColor,
+//     ...data
+// }
+    arrayCart.push(data)
 
     localStorage.setItem(`${nameLocalStorage}`, JSON.stringify( arrayCart));
 
@@ -63,16 +66,16 @@ export const SetRecentSearchLocalStorage=({nameLocalStorage,title})=>{
         id:Date.now(), 
         title:title
     }
-    console.log( newData);
+   // console.log( newData);
     arraySearch.push(newData)
-    
+
         localStorage.setItem(`${nameLocalStorage}`, JSON.stringify( arraySearch));
 }
 
 export const DeleteLoSRecentsSearch=({nameLocalStorage,id})=>{
-console.log(id);
+//console.log(id);
   let  array = GetLocalStorage(`${nameLocalStorage}`)
-  console.log(array);
+  //console.log(array);
     array.forEach((item, index, array) => {
         if (item.id === id) {
             array.splice(index, 1);

@@ -7,6 +7,7 @@ import { Product } from "../../components/product/product";
 import { Link } from "../../components/link/link";
 import { SearchHome } from "./searchHome";
 
+
 export default function Search(){
 
     return El({

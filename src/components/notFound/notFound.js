@@ -3,14 +3,14 @@ import El from "../../utils/El";
 export const NotFound=({title,des})=>{
     return El({
         element:'div',
-        className:'flex flex-col absolute left-1/2 top-1/2 -translate-x-1/2  w-[300px] h-[400px]',
+        className:' absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-1/2  ',
         child:[
             El({
                 element:'div',
                 className:'',
                 child:El({
                     element:'img',
-                    className:'w-full',
+                    className:'w-full ',
                     src:'../images/notfound.png'
                 }),
             }),

@@ -6,7 +6,19 @@ export default {
     "./main.js"
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'loading': 'loading 1s ease infinite', 
+      },
+      keyframes: {
+        loading: {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
+        },
+
+    }
+  }
   },
   plugins: [],
 }
+

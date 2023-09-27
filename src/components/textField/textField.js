@@ -10,7 +10,7 @@ export const TextField = ({
                           }) => {
     return El({
         element: 'div',
-        className: 'flex text-gray-600 flex-col gap-4 px-1 relative w-[400px]',
+        className: 'flex text-gray-600 flex-col gap-4 px-1 relative w-[350px]',
         child: [
             
             El({

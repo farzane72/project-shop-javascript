@@ -21,7 +21,7 @@ export const Welcome=()=>{
                         child:[
                             El({
                                 element:'p',
-                                className:'text-white text-xl font-bold',
+                                className:'text-white text-2xl font-bold',
                                 child:"Welcome to"
                             }),
                             El({
@@ -40,7 +40,7 @@ export const Welcome=()=>{
                     }),
                     El({
                         element:'div',
-                        className:'text-sm text-white tracking-tight mb-2 ',
+                        className:'text-lg text-white tracking-tight mb-2 ',
                         child:"The best sneakers & shoes e-commerse app of the century for your fashion needs!"
                             
                     })

@@ -6,7 +6,7 @@ export const Product = ({ id,src, title = "", price = "" }) => {
     to: `/products/singleproduct/${id}`,
     child: El({
       element: "div",
-      className: "flex flex-col gap-1 mb-2 ",
+      className: "flex flex-col gap-1 mb-3 ",
       child: [
         El({
           element: "div",
@@ -19,12 +19,12 @@ export const Product = ({ id,src, title = "", price = "" }) => {
         }),
         El({
           element: "p",
-          className: "font-bold tracking-tight capitalize",
+          className: "font-bold tracking-tight capitalize pl-1 pt-1",
           child: title,
         }),
         El({
           element: "span",
-          className: "font-bold text-sm",
+          className: "font-bold text-sm pl-1 ",
           child: price,
         }),
       ],

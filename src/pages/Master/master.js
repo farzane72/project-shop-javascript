@@ -1,6 +1,8 @@
 import El from "../../utils/El";
 import { svgs } from "../../components/svg/svg";
 import { Link } from "../../components/link/link";
+import { GetLocalStorage } from "../../services/localstorage";
+//import { countShoppingCart } from "../../constants";
 
 export default function Master(child) {
   return El({
@@ -43,7 +45,7 @@ export default function Master(child) {
             Link({to:'/mycart',
             child:El({
               element: "div",
-              className: "flex flex-col justify-center items-center",
+              className: "flex flex-col justify-center items-center relative",
               child: [
                 El({
                   element: "span",
@@ -54,6 +56,12 @@ export default function Master(child) {
                   element: "span",
                   className: "text-sm",
                   child:'Cart'
+                }),
+                El({
+                  element: "div",
+                  id:'count-cart',
+                  className: `text-sm w-3 h-3 rounded-md bg-red-500 flex items-center justify-center  absolute -top-1 -right-1 text-white  ${countShoppingCart()>0 ? 'block' : 'hidden'} `,
+                  child:countShoppingCart()
                 }),
               ],
             }),
@@ -118,4 +126,8 @@ export default function Master(child) {
       }),
     ],
   });
+}
+export const countShoppingCart=()=>{
+  let data = GetLocalStorage("myCart");
+  return data.reduce((sum, current) => sum + (+current.countPro), 0)
 }
